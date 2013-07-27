@@ -16,23 +16,37 @@
 package uk.co.androidalliance.edgeeffectoverride;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.test.IsolatedContext;
 import android.util.AttributeSet;
 
 public class EdgeEffectListView extends android.widget.ListView {
 
   public EdgeEffectListView(Context context) {
-    super(new ContextWrapperEdgeEffect(context));
+    this(context, null);
   }
 
-	public EdgeEffectListView(Context context, AttributeSet attrs) {
-		super(new ContextWrapperEdgeEffect(context), attrs);
-	}
+  public EdgeEffectListView(Context context, AttributeSet attrs) {
+    this(context, attrs, 0);
+  }
 
-	public EdgeEffectListView(Context context, AttributeSet attrs, int defStyle) {
-		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
-	}
+  public EdgeEffectListView(Context context, AttributeSet attrs, int defStyle) {
+    super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
+    init(context, attrs, defStyle);
+  }
 
-  public void setEdgeEffectColor(int edgeEffectColor){
-    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  private void init(Context context, AttributeSet attrs, int defStyle) {
+    int color = context.getResources().getColor(R.color.default_edgeeffect_color);
+
+    if (attrs != null) {
+      TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EdgeEffectView, defStyle, 0);
+      color = a.getColor(R.styleable.EdgeEffectView_edgeeffect_color, color);
+      a.recycle();
+    }
+    setEdgeEffectColor(color);
+  }
+
+  public void setEdgeEffectColor(int edgeEffectColor) {
+    ((ContextWrapperEdgeEffect) getContext()).setEdgeEffectColor(edgeEffectColor);
   }
 }

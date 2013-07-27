@@ -15,27 +15,26 @@
  */
 package uk.co.androidalliance.edgeeffectoverride;
 
-import android.graphics.PorterDuff;
-import uk.co.androidalliance.edgeeffectoverride.R;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
 public class ContextWrapperEdgeEffect extends ContextWrapper {
 
-  private static final int fDEFAULT_COLOR = 0xFF33B5E5;   //Holo blue color by default
-	private static ResourcesEdgeEffect RES_EDGE_EFFECT;
-
+  private static ResourcesEdgeEffect RES_EDGE_EFFECT;
   private int mColor;
+  private Drawable mEdgeDrawable;
+  private Drawable mGlowDrawable;
 
-	public ContextWrapperEdgeEffect(Context context) {
-		this(context, fDEFAULT_COLOR);
-	}
+  public ContextWrapperEdgeEffect(Context context) {
+    this(context, 0);
+  }
 
   public ContextWrapperEdgeEffect(Context context, int color) {
     super(context);
@@ -45,58 +44,61 @@ public class ContextWrapperEdgeEffect extends ContextWrapper {
       RES_EDGE_EFFECT = new ResourcesEdgeEffect(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
   }
 
-  public void setEdgeEffectColor(int color){
+  public void setEdgeEffectColor(int color) {
     mColor = color;
+    if (mEdgeDrawable != null) mEdgeDrawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+    if (mGlowDrawable != null) mGlowDrawable.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
   }
 
   @Override
-	public Resources getResources() {
-		return RES_EDGE_EFFECT;
-	}
+  public Resources getResources() {
+    return RES_EDGE_EFFECT;
+  }
 
-	private class ResourcesEdgeEffect extends Resources {
-		private int overscroll_edge = getPlatformDrawableId("overscroll_edge");
-		private int overscroll_glow = getPlatformDrawableId("overscroll_glow");
+  private class ResourcesEdgeEffect extends Resources {
+    private int overscroll_edge = getPlatformDrawableId("overscroll_edge");
+    private int overscroll_glow = getPlatformDrawableId("overscroll_glow");
 
+    public ResourcesEdgeEffect(AssetManager assets, DisplayMetrics metrics, Configuration config) {
+      //super(metrics, localConfiguration);
+      super(assets, metrics, config);
+    }
 
+    private int getPlatformDrawableId(String name) {
+      try {
+        int i = ((Integer) Class.forName("com.android.internal.R$drawable").getField(name).get(null)).intValue();
+        return i;
+      } catch (ClassNotFoundException e) {
+        Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot find internal resource class");
+        return 0;
+      } catch (NoSuchFieldException e1) {
+        Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Internal resource id does not exist: " + name);
+        return 0;
+      } catch (IllegalArgumentException e2) {
+        Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot access internal resource id: " + name);
+        return 0;
+      } catch (IllegalAccessException e3) {
+        Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot access internal resource id: " + name);
+      }
+      return 0;
+    }
 
-		public ResourcesEdgeEffect(AssetManager assets, DisplayMetrics metrics, Configuration config) {
-			//super(metrics, localConfiguration);
-			super(assets, metrics, config);
-		}
-
-		private int getPlatformDrawableId(String name) {
-			try {
-				int i = ((Integer) Class.forName("com.android.internal.R$drawable").getField(name).get(null)).intValue();
-				return i;
-			} catch (ClassNotFoundException e) {
-				Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot find internal resource class");
-				return 0;
-			} catch (NoSuchFieldException e1) {
-				Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Internal resource id does not exist: " + name);
-				return 0;
-			} catch (IllegalArgumentException e2) {
-				Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot access internal resource id: " + name);
-				return 0;
-			} catch (IllegalAccessException e3) {
-				Log.e("[ContextWrapperEdgeEffect].getPlatformDrawableId()", "Cannot access internal resource id: " + name);
-			}
-			return 0;
-		}
-
-		public Drawable getDrawable(int resId) throws Resources.NotFoundException {
+    @Override
+    public Drawable getDrawable(int resId) throws Resources.NotFoundException {
       Drawable ret = null;
-			if (resId == this.overscroll_edge)
-        ret = ContextWrapperEdgeEffect.this.getBaseContext().getResources().getDrawable(R.drawable.overscroll_edge);
-			else if (resId == this.overscroll_glow)
-        ret = ContextWrapperEdgeEffect.this.getBaseContext().getResources().getDrawable(R.drawable.overscroll_glow);
-			else return super.getDrawable(resId);
+      if (resId == this.overscroll_edge) {
+        mEdgeDrawable = ContextWrapperEdgeEffect.this.getBaseContext().getResources().getDrawable(R.drawable.overscroll_edge);
+        ret = mEdgeDrawable;
+      } else if (resId == this.overscroll_glow) {
+        mGlowDrawable = ContextWrapperEdgeEffect.this.getBaseContext().getResources().getDrawable(R.drawable.overscroll_glow);
+        ret = mGlowDrawable;
+      } else return super.getDrawable(resId);
 
-      if(ret != null){
+      if (ret != null) {
         ret.setColorFilter(mColor, PorterDuff.Mode.MULTIPLY);
       }
 
       return ret;
-		}
-	}
+    }
+  }
 }

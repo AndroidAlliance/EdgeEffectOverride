@@ -1,6 +1,7 @@
 package uk.co.androidalliance.edgeeffectoverride.sample;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
@@ -44,6 +45,8 @@ public class MainActivity extends Activity {
     setContentView(R.layout.activity_main);
 
     mListView = (EdgeEffectListView) findViewById(R.id.listview);
+
+    mListView.setEdgeEffectColor(Color.RED);
 
     mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fSTRINGS));
   }

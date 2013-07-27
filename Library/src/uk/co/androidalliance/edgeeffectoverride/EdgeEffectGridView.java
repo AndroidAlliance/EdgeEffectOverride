@@ -16,21 +16,34 @@
 package uk.co.androidalliance.edgeeffectoverride;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class EdgeEffectGridView extends android.widget.GridView {
 
   public EdgeEffectGridView(Context context) {
-    super(new ContextWrapperEdgeEffect(context));
+    this(context, null);
   }
 
 	public EdgeEffectGridView(Context context, AttributeSet attrs) {
-		super(new ContextWrapperEdgeEffect(context), attrs);
+		this(context, attrs, 0);
 	}
 
 	public EdgeEffectGridView(Context context, AttributeSet attrs, int defStyle) {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
+    init(context, attrs, defStyle);
 	}
+
+  private void init(Context context, AttributeSet attrs, int defStyle){
+    int color = context.getResources().getColor(R.color.default_edgeeffect_color);
+
+    if (attrs != null) {
+      TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EdgeEffectView, defStyle, 0);
+      color = a.getColor(R.styleable.EdgeEffectView_edgeeffect_color, color);
+      a.recycle();
+    }
+    setEdgeEffectColor(color);
+  }
 
   public void setEdgeEffectColor(int edgeEffectColor){
     ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);

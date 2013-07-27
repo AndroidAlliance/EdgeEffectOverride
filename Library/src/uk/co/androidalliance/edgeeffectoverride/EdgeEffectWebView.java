@@ -17,6 +17,7 @@ package uk.co.androidalliance.edgeeffectoverride;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class EdgeEffectWebView extends android.webkit.WebView {
@@ -31,12 +32,25 @@ public class EdgeEffectWebView extends android.webkit.WebView {
 
   public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle) {
     super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
+    init(context, attrs, defStyle);
   }
 
   @Deprecated
   @TargetApi(11)
   public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
     super(new ContextWrapperEdgeEffect(context), attrs, defStyle, privateBrowsing);
+    init(context, attrs, defStyle);
+  }
+
+  private void init(Context context, AttributeSet attrs, int defStyle){
+    int color = context.getResources().getColor(R.color.default_edgeeffect_color);
+
+    if (attrs != null) {
+      TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EdgeEffectView, defStyle, 0);
+      color = a.getColor(R.styleable.EdgeEffectView_edgeeffect_color, color);
+      a.recycle();
+    }
+    setEdgeEffectColor(color);
   }
 
   public void setEdgeEffectColor(int edgeEffectColor){

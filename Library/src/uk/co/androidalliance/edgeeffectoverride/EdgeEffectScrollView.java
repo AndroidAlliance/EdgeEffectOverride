@@ -16,21 +16,34 @@
 package uk.co.androidalliance.edgeeffectoverride;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class EdgeEffectScrollView extends android.widget.ScrollView {
 
   public EdgeEffectScrollView(Context context){
-    this(new ContextWrapperEdgeEffect(context), null);
+    this(context, null);
   }
 
 	public EdgeEffectScrollView(Context context, AttributeSet attrs) {
-		this(new ContextWrapperEdgeEffect(context), attrs, 0);
+		this(context, attrs, 0);
 	}
 
 	public EdgeEffectScrollView(Context context, AttributeSet attrs, int defStyle) {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
+    init(context, attrs, defStyle);
 	}
+
+  private void init(Context context, AttributeSet attrs, int defStyle){
+    int color = context.getResources().getColor(R.color.default_edgeeffect_color);
+
+    if (attrs != null) {
+      TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EdgeEffectView, defStyle, 0);
+      color = a.getColor(R.styleable.EdgeEffectView_edgeeffect_color, color);
+      a.recycle();
+    }
+    setEdgeEffectColor(color);
+  }
 
   public void setEdgeEffectColor(int edgeEffectColor){
     ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
