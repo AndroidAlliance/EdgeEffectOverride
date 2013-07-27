@@ -20,6 +20,10 @@ import android.util.AttributeSet;
 
 public class ExpandableListView extends android.widget.ExpandableListView {
 
+  public ExpandableListView(Context context) {
+    super(new ContextWrapperEdgeEffect(context));
+  }
+
 	public ExpandableListView(Context context, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(context), attrs);
 	}

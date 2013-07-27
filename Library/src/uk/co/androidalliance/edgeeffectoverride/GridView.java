@@ -20,6 +20,10 @@ import android.util.AttributeSet;
 
 public class GridView extends android.widget.GridView {
 
+  public GridView(Context context) {
+    super(new ContextWrapperEdgeEffect(context));
+  }
+
 	public GridView(Context context, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(context), attrs);
 	}

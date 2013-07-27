@@ -20,6 +20,10 @@ import android.util.AttributeSet;
 
 public class ScrollView extends android.widget.ScrollView {
 
+  public ScrollView(Context context){
+    this(new ContextWrapperEdgeEffect(context), null);
+  }
+
 	public ScrollView(Context context, AttributeSet attrs) {
 		this(new ContextWrapperEdgeEffect(context), attrs, 0);
 	}

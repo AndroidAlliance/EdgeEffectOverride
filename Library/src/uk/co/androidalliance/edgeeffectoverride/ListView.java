@@ -20,6 +20,10 @@ import android.util.AttributeSet;
 
 public class ListView extends android.widget.ListView {
 
+  public ListView(Context context) {
+    super(new ContextWrapperEdgeEffect(context));
+  }
+
 	public ListView(Context context, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(context), attrs);
 	}
