@@ -18,17 +18,17 @@ package uk.co.androidalliance.edgeeffectoverride;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class ScrollView extends android.widget.ScrollView {
+public class EdgeEffectGridView extends android.widget.GridView {
 
-  public ScrollView(Context context){
-    this(new ContextWrapperEdgeEffect(context), null);
+  public EdgeEffectGridView(Context context) {
+    super(new ContextWrapperEdgeEffect(context));
   }
 
-	public ScrollView(Context context, AttributeSet attrs) {
-		this(new ContextWrapperEdgeEffect(context), attrs, 0);
+	public EdgeEffectGridView(Context context, AttributeSet attrs) {
+		super(new ContextWrapperEdgeEffect(context), attrs);
 	}
 
-	public ScrollView(Context context, AttributeSet attrs, int defStyle) {
+	public EdgeEffectGridView(Context context, AttributeSet attrs, int defStyle) {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 

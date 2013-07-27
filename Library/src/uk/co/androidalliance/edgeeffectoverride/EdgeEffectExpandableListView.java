@@ -18,17 +18,17 @@ package uk.co.androidalliance.edgeeffectoverride;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class ExpandableListView extends android.widget.ExpandableListView {
+public class EdgeEffectExpandableListView extends android.widget.ExpandableListView {
 
-  public ExpandableListView(Context context) {
+  public EdgeEffectExpandableListView(Context context) {
     super(new ContextWrapperEdgeEffect(context));
   }
 
-	public ExpandableListView(Context context, AttributeSet attrs) {
+	public EdgeEffectExpandableListView(Context context, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(context), attrs);
 	}
 
-	public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
+	public EdgeEffectExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 

@@ -18,15 +18,18 @@ package uk.co.androidalliance.edgeeffectoverride;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class ViewPager extends android.support.v4.view.ViewPager {
+public class EdgeEffectListView extends android.widget.ListView {
 
+  public EdgeEffectListView(Context context) {
+    super(new ContextWrapperEdgeEffect(context));
+  }
 
-	public ViewPager(Context context) {
-		this(context, null);
+	public EdgeEffectListView(Context context, AttributeSet attrs) {
+		super(new ContextWrapperEdgeEffect(context), attrs);
 	}
 
-	public ViewPager(Context paramContext, AttributeSet attrs) {
-		super(new ContextWrapperEdgeEffect(paramContext), attrs);
+	public EdgeEffectListView(Context context, AttributeSet attrs, int defStyle) {
+		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 
   public void setEdgeEffectColor(int edgeEffectColor){

@@ -15,22 +15,29 @@
  */
 package uk.co.androidalliance.edgeeffectoverride;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class GridView extends android.widget.GridView {
+public class EdgeEffectWebView extends android.webkit.WebView {
 
-  public GridView(Context context) {
-    super(new ContextWrapperEdgeEffect(context));
+	public EdgeEffectWebView(Context context) {
+		this(context, null);
+	}
+
+	public EdgeEffectWebView(Context context, AttributeSet attrs) {
+		this(context, attrs, 0);
+	}
+
+  public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle) {
+    super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
   }
 
-	public GridView(Context context, AttributeSet attrs) {
-		super(new ContextWrapperEdgeEffect(context), attrs);
-	}
-
-	public GridView(Context context, AttributeSet attrs, int defStyle) {
-		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
-	}
+  @Deprecated
+  @TargetApi(11)
+  public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
+    super(new ContextWrapperEdgeEffect(context), attrs, defStyle, privateBrowsing);
+  }
 
   public void setEdgeEffectColor(int edgeEffectColor){
     ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);

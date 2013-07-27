@@ -15,29 +15,19 @@
  */
 package uk.co.androidalliance.edgeeffectoverride;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class WebView extends android.webkit.WebView {
+public class EdgeEffectViewPager extends android.support.v4.view.ViewPager {
 
-	public WebView(Context context) {
+
+	public EdgeEffectViewPager(Context context) {
 		this(context, null);
 	}
 
-	public WebView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+	public EdgeEffectViewPager(Context paramContext, AttributeSet attrs) {
+		super(new ContextWrapperEdgeEffect(paramContext), attrs);
 	}
-
-  public WebView(Context context, AttributeSet attrs, int defStyle) {
-    super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
-  }
-
-  @Deprecated
-  @TargetApi(11)
-  public WebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
-    super(new ContextWrapperEdgeEffect(context), attrs, defStyle, privateBrowsing);
-  }
 
   public void setEdgeEffectColor(int edgeEffectColor){
     ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);

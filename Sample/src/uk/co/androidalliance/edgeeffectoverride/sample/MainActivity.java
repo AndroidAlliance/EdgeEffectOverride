@@ -3,8 +3,8 @@ package uk.co.androidalliance.edgeeffectoverride.sample;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import uk.co.androidalliance.edgeeffectoverride.ListView;
-import uk.co.androidalliance.edgeeffectoverride.sample.R;
+
+import uk.co.androidalliance.edgeeffectoverride.EdgeEffectListView;
 
 public class MainActivity extends Activity {
 
@@ -36,14 +36,14 @@ public class MainActivity extends Activity {
       "Item 25"
   };
 
-  private ListView mListView;
+  private EdgeEffectListView mListView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    mListView = (ListView) findViewById(R.id.listview);
+    mListView = (EdgeEffectListView) findViewById(R.id.listview);
 
     mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fSTRINGS));
   }
