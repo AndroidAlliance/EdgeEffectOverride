@@ -28,4 +28,7 @@ public class GridView extends android.widget.GridView {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 
+  public void setEdgeEffectColor(int edgeEffectColor){
+    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  }
 }

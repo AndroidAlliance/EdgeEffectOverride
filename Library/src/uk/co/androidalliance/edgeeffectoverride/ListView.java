@@ -28,4 +28,7 @@ public class ListView extends android.widget.ListView {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 
+  public void setEdgeEffectColor(int edgeEffectColor){
+    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  }
 }

@@ -45,6 +45,10 @@ public class ContextWrapperEdgeEffect extends ContextWrapper {
       RES_EDGE_EFFECT = new ResourcesEdgeEffect(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
   }
 
+  public void setEdgeEffectColor(int color){
+    mColor = color;
+  }
+
   @Override
 	public Resources getResources() {
 		return RES_EDGE_EFFECT;

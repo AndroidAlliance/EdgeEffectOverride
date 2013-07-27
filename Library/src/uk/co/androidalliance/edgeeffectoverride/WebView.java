@@ -26,4 +26,8 @@ public class WebView extends android.webkit.WebView {
 	public WebView(Context paramContext, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(paramContext), attrs);
 	}
+
+  public void setEdgeEffectColor(int edgeEffectColor){
+    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  }
 }

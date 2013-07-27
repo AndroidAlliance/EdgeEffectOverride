@@ -27,4 +27,8 @@ public class ExpandableListView extends android.widget.ExpandableListView {
 	public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
+
+  public void setEdgeEffectColor(int edgeEffectColor){
+    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  }
 }

@@ -26,4 +26,8 @@ public class ViewPager extends android.support.v4.view.ViewPager {
 	public ViewPager(Context paramContext, AttributeSet attrs) {
 		super(new ContextWrapperEdgeEffect(paramContext), attrs);
 	}
+
+  public void setEdgeEffectColor(int edgeEffectColor){
+    ((ContextWrapperEdgeEffect)  getContext()).setEdgeEffectColor(edgeEffectColor);
+  }
 }
