@@ -27,7 +27,7 @@ import android.util.Log;
 
 public class ContextWrapperEdgeEffect extends ContextWrapper {
 
-  private static ResourcesEdgeEffect RES_EDGE_EFFECT;
+  private ResourcesEdgeEffect mResourcesEdgeEffect;
   private int mColor;
   private Drawable mEdgeDrawable;
   private Drawable mGlowDrawable;
@@ -40,8 +40,7 @@ public class ContextWrapperEdgeEffect extends ContextWrapper {
     super(context);
     mColor = color;
     Resources resources = context.getResources();
-    if (RES_EDGE_EFFECT == null)
-      RES_EDGE_EFFECT = new ResourcesEdgeEffect(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+    mResourcesEdgeEffect = new ResourcesEdgeEffect(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
   }
 
   public void setEdgeEffectColor(int color) {
@@ -52,7 +51,7 @@ public class ContextWrapperEdgeEffect extends ContextWrapper {
 
   @Override
   public Resources getResources() {
-    return RES_EDGE_EFFECT;
+    return mResourcesEdgeEffect;
   }
 
   private class ResourcesEdgeEffect extends Resources {
