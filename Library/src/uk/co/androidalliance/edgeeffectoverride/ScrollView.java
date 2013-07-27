@@ -25,7 +25,7 @@ public class ScrollView extends android.widget.ScrollView {
 	}
 
 	public ScrollView(Context context, AttributeSet attrs, int defStyle) {
-		super(new ContextWrapperEdgeEffect(context), attrs, 0);
+		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
 	}
 
   public void setEdgeEffectColor(int edgeEffectColor){
