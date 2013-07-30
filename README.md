@@ -5,6 +5,8 @@ EdgeEffectOverride is library designed to help override the
 blue *overscroll_edge* and *overscroll_glow* effects used by
 the the *EdgeEffect* class.
 
+![http://i.imgur.com/qFlJl1M.png](http://i.imgur.com/qFlJl1M.png)
+
 Simply import the project into your library, replace existing
 references to ScrollView, ListView, ExpandableListView, GridView & ViewPager
 with references to the the classes found in this library.
