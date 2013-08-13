@@ -11,17 +11,7 @@ Simply import the project into your library, replace existing
 references to ScrollView, ListView, ExpandableListView, GridView & ViewPager
 with references to the the classes found in this library.
 
-To edit the graphics:
-
-* overscroll_edge.png
-  and 
-* overscroll_glow.png
-
-found in:
-
-* drawable-mdpi
-* drawable-hdpi
-* drawable-xhdpi
+No need to edit any graphics, simple colorize the edge effect dynamically or via the layout xml, easy! 
 
 
 
