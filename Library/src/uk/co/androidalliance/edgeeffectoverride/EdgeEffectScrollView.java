@@ -26,7 +26,7 @@ public class EdgeEffectScrollView extends android.widget.ScrollView {
   }
 
 	public EdgeEffectScrollView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		this(context, attrs, android.R.attr.scrollViewStyle);
 	}
 
 	public EdgeEffectScrollView(Context context, AttributeSet attrs, int defStyle) {
