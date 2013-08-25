@@ -27,7 +27,7 @@ public class EdgeEffectWebView extends android.webkit.WebView {
 	}
 
 	public EdgeEffectWebView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		this(context, attrs, android.R.attr.webViewStyle);
 	}
 
   public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle) {

@@ -27,7 +27,7 @@ public class EdgeEffectListView extends android.widget.ListView {
   }
 
   public EdgeEffectListView(Context context, AttributeSet attrs) {
-    this(context, attrs, 0);
+    this(context, attrs, android.R.attr.listViewStyle);
   }
 
   public EdgeEffectListView(Context context, AttributeSet attrs, int defStyle) {
