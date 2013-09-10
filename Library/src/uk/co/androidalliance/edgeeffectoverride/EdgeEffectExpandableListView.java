@@ -26,7 +26,7 @@ public class EdgeEffectExpandableListView extends android.widget.ExpandableListV
   }
 
 	public EdgeEffectExpandableListView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		this(context, attrs, android.R.attr.expandableListViewStyle);
 	}
 
 	public EdgeEffectExpandableListView(Context context, AttributeSet attrs, int defStyle) {

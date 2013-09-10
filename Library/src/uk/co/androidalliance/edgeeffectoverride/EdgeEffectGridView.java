@@ -26,7 +26,7 @@ public class EdgeEffectGridView extends android.widget.GridView {
   }
 
 	public EdgeEffectGridView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		this(context, attrs, android.R.attr.gridViewStyle);
 	}
 
 	public EdgeEffectGridView(Context context, AttributeSet attrs, int defStyle) {
