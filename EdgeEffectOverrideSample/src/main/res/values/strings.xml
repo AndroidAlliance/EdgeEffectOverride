@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Edge Effect Override Sample</string>
+    <string name="title_activity_list_view">ListView</string>
+    <string name="title_activity_grid_view">GridView</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="stringarray">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+        <item>Item 7</item>
+        <item>Item 8</item>
+        <item>Item 9</item>
+        <item>Item 10</item>
+        <item>Item 11</item>
+        <item>Item 12</item>
+        <item>Item 13</item>
+        <item>Item 14</item>
+        <item>Item 15</item>
+        <item>Item 16</item>
+        <item>Item 17</item>
+        <item>Item 18</item>
+        <item>Item 19</item>
+        <item>Item 20</item>
+        <item>Item 21</item>
+        <item>Item 22</item>
+        <item>Item 23</item>
+        <item>Item 24</item>
+        <item>Item 25</item>
+        <item>Item 26</item>
+        <item>Item 27</item>
+        <item>Item 28</item>
+        <item>Item 29</item>
+        <item>Item 30</item>
+        <item>Item 31</item>
+        <item>Item 32</item>
+        <item>Item 33</item>
+        <item>Item 34</item>
+        <item>Item 35</item>
+        <item>Item 36</item>
+        <item>Item 37</item>
+        <item>Item 38</item>
+        <item>Item 39</item>
+        <item>Item 40</item>
+        <item>Item 41</item>
+        <item>Item 42</item>
+        <item>Item 43</item>
+        <item>Item 44</item>
+        <item>Item 45</item>
+        <item>Item 46</item>
+        <item>Item 47</item>
+        <item>Item 48</item>
+        <item>Item 49</item>
+        <item>Item 50</item>
+        <item>Item 51</item>
+        <item>Item 52</item>
+        <item>Item 53</item>
+        <item>Item 54</item>
+        <item>Item 55</item>
+        <item>Item 56</item>
+        <item>Item 57</item>
+        <item>Item 58</item>
+        <item>Item 59</item>
+        <item>Item 60</item>
+    </string-array>
+
+    <string name="title_activity_expandable_list_view">ExpandableListView</string>
+    <string name="title_activity_scroll_view">ScrollView</string>
+    <string name="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam
+        nec eros ut feugiat. In hac habitasse platea dictumst. Vivamus hendrerit, augue sed
+        imperdiet sagittis, arcu quam tempus dolor, in consequat turpis tortor eget sapien. Cras
+        condimentum nibh nisi, eget blandit nulla iaculis laoreet. Morbi condimentum sit amet lectus
+        a commodo. Etiam accumsan adipiscing est, vel pellentesque massa ultricies at. Sed eget
+        fermentum nunc. Proin in molestie orci. Praesent feugiat fermentum orci in placerat. Quisque
+        gravida porttitor tellus condimentum porta. Phasellus tristique quam rhoncus, elementum
+        ligula vitae, cursus purus.
+
+        Maecenas a velit a dui viverra auctor. Sed at scelerisque diam, sit amet ornare massa.
+        Phasellus sit amet libero ante. Praesent leo risus, gravida id justo in, ultrices accumsan
+        tortor. Integer placerat erat sit amet feugiat eleifend. Mauris auctor egestas libero, eget
+        congue erat pretium quis. Integer aliquam tristique orci quis tempus. Integer non tincidunt
+        neque. Nunc nec adipiscing risus, in rutrum neque. Donec mollis ultricies enim vitae
+        vulputate. Nam accumsan, tellus nec luctus consequat, nunc leo laoreet nisl, eget congue mi
+        augue in nibh. Sed commodo, nulla non tempus tempor, lectus lacus interdum massa, in
+        accumsan massa nunc a tortor. Nam nulla urna, semper id ullamcorper in, tempor sed neque.
+        Praesent gravida ultricies augue, et bibendum velit tincidunt vel.
+
+        Duis at justo auctor sem convallis iaculis. Vestibulum suscipit nibh suscipit, fermentum
+        turpis non, vestibulum eros. Donec dui orci, interdum vitae nisi volutpat, porta ultricies
+        orci. Donec in nibh magna. Fusce magna nibh, facilisis ut porttitor nec, sollicitudin et
+        nunc. Proin at diam non ante aliquet ultrices a ullamcorper est. Donec malesuada dignissim
+        lectus ut aliquet. Donec pellentesque lorem ut lorem pretium, ac ultricies dui condimentum.
+        Proin sed sem nunc. Vivamus congue tellus ac enim vehicula eleifend. Pellentesque cursus
+        sollicitudin justo, in tincidunt metus facilisis et. Nunc vel congue leo. Donec in urna
+        egestas, tincidunt nibh ac, pretium diam. Mauris nec odio massa.
+
+        Morbi rhoncus lacus eget consequat suscipit. Vestibulum ultricies nunc sed scelerisque
+        varius. Proin ornare magna sit amet nibh euismod ultricies. Proin pharetra risus nunc, id
+        molestie nisi suscipit in. Quisque tempor orci placerat odio malesuada hendrerit. Proin eu
+        dapibus velit. Suspendisse imperdiet, lectus eu semper euismod, quam enim consequat nisi,
+        non rhoncus diam libero et urna. Vestibulum ornare nulla at porttitor posuere. Sed elementum
+        feugiat accumsan. Nam eu mauris sed leo tincidunt lacinia vitae at erat.
+
+        Praesent auctor mi vitae ligula scelerisque sodales. Etiam ac gravida nisl. Ut accumsan
+        lorem lobortis laoreet tempus. Sed placerat ut nibh ut viverra. Aliquam ullamcorper lacinia
+        ultrices. Morbi a arcu leo. Donec vitae scelerisque nisi, pharetra placerat neque. Maecenas
+        et nunc accumsan, faucibus purus eu, hendrerit neque. Vestibulum pharetra sem arcu, eu
+        eleifend sapien molestie quis. Cras venenatis vehicula ante, sit amet rhoncus leo sagittis
+        a. Quisque id nibh sed lectus congue euismod.</string>
+    <string name="title_activity_view_pager">ViewPager</string>
+    <string name="title_activity_web_view">WebView</string>
+
+</resources>
