@@ -11,13 +11,29 @@ with references to the the classes found in this library.
 
 No need to edit any graphics, simply colorize the edge effect dynamically or via the layout xml, easy! 
 
+<H2>Dependency</H2>
+Adding it as a dependency to your project.
+
+Gradle:
+
+	dependencies {
+    	compile 'uk.co.androidalliance:edgeeffectoverride:1.0.1'
+	}
+
+Maven:
+
+	<dependency>
+    	<groupId>uk.co.androidalliance</groupId>
+    	<artifactId>edgeeffectoverride</artifactId>
+    	<version>1.0.1</version>
+	</dependency>
+		
 
 
 Developed By
 ============
 
 * Android Alliance - <hello@androidalliance.co.uk>
-
 
 
 License
