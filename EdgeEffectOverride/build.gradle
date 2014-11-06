@@ -1,12 +1,12 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 repositories {
     mavenCentral()
 }
 
 android {
-    compileSdkVersion 18
-    buildToolsVersion "18.0.1"
+    compileSdkVersion 21
+    buildToolsVersion '21.0.2'
 
     defaultConfig {
         minSdkVersion 10
@@ -21,4 +21,5 @@ dependencies {
     compile 'com.android.support:support-v4:18.0.+'
 }
 
-apply from: '../maven_push.gradle'
+// directions for mvn-push: https://github.com/chrisbanes/gradle-mvn-push
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

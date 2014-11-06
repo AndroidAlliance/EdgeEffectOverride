@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         tools:context=".ScrollViewActivity">
 
-    <uk.co.androidalliance.edgeeffectoverride.EdgeEffectScrollView
+    <uk.co.androidalliance.edgeeffectoverride.ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -18,6 +18,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/loremipsum"/>
 
-    </uk.co.androidalliance.edgeeffectoverride.EdgeEffectScrollView>
+    </uk.co.androidalliance.edgeeffectoverride.ScrollView>
 
 </RelativeLayout>

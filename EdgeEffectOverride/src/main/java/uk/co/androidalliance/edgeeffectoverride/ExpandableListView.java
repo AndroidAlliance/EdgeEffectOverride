@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Android Alliance, LTD
+ * Copyright (c) 2014 Android Alliance, LTD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,32 +15,24 @@
  */
 package uk.co.androidalliance.edgeeffectoverride;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-public class EdgeEffectWebView extends android.webkit.WebView {
+public class ExpandableListView extends android.widget.ExpandableListView {
 
-	public EdgeEffectWebView(Context context) {
-		this(context, null);
-	}
-
-	public EdgeEffectWebView(Context context, AttributeSet attrs) {
-		this(context, attrs, android.R.attr.webViewStyle);
-	}
-
-  public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle) {
-    super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
-    init(context, attrs, defStyle);
+  public ExpandableListView(Context context) {
+    this(context, null);
   }
 
-  @Deprecated
-  @TargetApi(11)
-  public EdgeEffectWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
-    super(new ContextWrapperEdgeEffect(context), attrs, defStyle, privateBrowsing);
+	public ExpandableListView(Context context, AttributeSet attrs) {
+		this(context, attrs, android.R.attr.expandableListViewStyle);
+	}
+
+	public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
+		super(new ContextWrapperEdgeEffect(context), attrs, defStyle);
     init(context, attrs, defStyle);
-  }
+	}
 
   private void init(Context context, AttributeSet attrs, int defStyle){
     int color = context.getResources().getColor(R.color.default_edgeeffect_color);

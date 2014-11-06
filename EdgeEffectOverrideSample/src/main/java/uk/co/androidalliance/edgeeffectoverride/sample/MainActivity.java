@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-import uk.co.androidalliance.edgeeffectoverride.EdgeEffectListView;
+import uk.co.androidalliance.edgeeffectoverride.ListView;
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
@@ -27,14 +27,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             ViewPagerActivity.class,
             WebViewActivity.class
     };
-    private EdgeEffectListView mListView;
+    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mListView = (EdgeEffectListView) findViewById(R.id.listview);
+        mListView = (ListView) findViewById(R.id.listview);
         mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, STRINGS));
         mListView.setOnItemClickListener(this);
     }

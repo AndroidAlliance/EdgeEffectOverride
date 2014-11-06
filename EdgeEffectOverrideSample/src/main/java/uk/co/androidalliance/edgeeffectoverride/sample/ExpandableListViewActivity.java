@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import uk.co.androidalliance.edgeeffectoverride.EdgeEffectExpandableListView;
+import uk.co.androidalliance.edgeeffectoverride.ExpandableListView;
 
 public class ExpandableListViewActivity extends Activity {
 
@@ -41,7 +41,7 @@ public class ExpandableListViewActivity extends Activity {
         }
 
         // Set up our adapter
-        ((EdgeEffectExpandableListView) findViewById(R.id.expandablelistview)).setAdapter(new SimpleExpandableListAdapter(
+        ((ExpandableListView) findViewById(R.id.expandablelistview)).setAdapter(new SimpleExpandableListAdapter(
                 this,
                 groupData,
                 android.R.layout.simple_expandable_list_item_1,

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
-import uk.co.androidalliance.edgeeffectoverride.EdgeEffectListView;
+import uk.co.androidalliance.edgeeffectoverride.ListView;
 
 public class ListViewActivity extends Activity {
 
@@ -13,7 +13,7 @@ public class ListViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_layout);
 
-        ((EdgeEffectListView) findViewById(R.id.listview))
+        ((ListView) findViewById(R.id.listview))
                 .setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.stringarray)));
     }
 

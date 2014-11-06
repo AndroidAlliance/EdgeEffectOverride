@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         tools:context=".GridViewActivity">
 
-    <uk.co.androidalliance.edgeeffectoverride.EdgeEffectGridView
+    <uk.co.androidalliance.edgeeffectoverride.GridView
             android:id="@+id/gridview"
             android:numColumns="3"
             android:layout_width="match_parent"
