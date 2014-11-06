@@ -17,16 +17,9 @@ Adding it as a dependency to your project.
 Gradle:
 
 	dependencies {
-    	compile 'uk.co.androidalliance:edgeeffectoverride:1.0.1'
+    	compile 'uk.co.androidalliance:edgeeffectoverride:1.0.2'
 	}
 
-Maven:
-
-	<dependency>
-    	<groupId>uk.co.androidalliance</groupId>
-    	<artifactId>edgeeffectoverride</artifactId>
-    	<version>1.0.1</version>
-	</dependency>
 		
 
 
@@ -39,7 +32,7 @@ Developed By
 License
 =======
 
-    Copyright 2013 Android Alliance Ltd
+    Copyright 2014 Android Alliance Ltd
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
